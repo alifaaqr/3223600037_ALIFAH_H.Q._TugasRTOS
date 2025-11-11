@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "ESP32 Dual Core Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 249.42,
+      "left": -149.03,
+      "attrs": {}
+    },
+    { "type": "wokwi-ky-040", "id": "encoder", "top": 356.9, "left": -384.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "green", [ "v0" ] ],
+    [ "esp:RX", "$serialMonitor:TX", "green", [ "v0" ] ],
+    [ "encoder:CLK", "esp:25", "yellow", [ "v0" ] ],
+    [ "encoder:DT", "esp:26", "blue", [ "v0" ] ],
+    [ "encoder:SW", "esp:27", "green", [ "v0" ] ],
+    [ "encoder:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "encoder:GND", "esp:GND.1", "black", [ "h19.2", "v20" ] ],
+    [ "encoder:VCC", "esp:5V", "red", [ "h28.8", "v77.2" ] ],
+    [ "encoder:CLK", "esp:16", "green", [ "h28.8", "v-9.6" ] ],
+    [ "encoder:DT", "esp:17", "green", [ "h48", "v-9.5" ] ],
+    [ "encoder:SW", "esp:18", "green", [ "h67.2", "v-9.5" ] ]
+  ],
+  "dependencies": {}
+}

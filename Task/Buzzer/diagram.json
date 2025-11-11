@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "ESP32 Dual Core Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 249.42,
+      "left": -149.03,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 360.3,
+      "left": -319.5,
+      "rotate": 270,
+      "attrs": { "volume": "0.5" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer1",
+      "top": 371.7,
+      "left": 33.3,
+      "rotate": 90,
+      "attrs": { "volume": "0.5" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "green", [ "v0" ] ],
+    [ "esp:RX", "$serialMonitor:TX", "green", [ "v0" ] ],
+    [ "buzzer:2", "esp:18", "green", [ "h0", "v-28.4" ] ],
+    [ "buzzer:1", "esp:GND.1", "black", [ "h0", "v67.2" ] ],
+    [ "buzzer1:2", "esp:5", "green", [ "h-48", "v-173.2", "h-153.6", "v115.2" ] ],
+    [ "buzzer1:1", "esp:GND.4", "green", [ "h-48", "v57.6" ] ]
+  ],
+  "dependencies": {}
+}

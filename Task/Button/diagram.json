@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "ESP32 Dual Core Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 249.42,
+      "left": -149.03,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 380.6,
+      "left": -9.6,
+      "attrs": { "color": "green", "label": "BTN1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 380.6,
+      "left": -259.2,
+      "attrs": { "color": "green", "label": "BTN2" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 303.6,
+      "left": 23.4,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    { "type": "wokwi-led", "id": "led2", "top": 294, "left": -265, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "green", [ "v0" ] ],
+    [ "esp:RX", "$serialMonitor:TX", "green", [ "v0" ] ],
+    [ "btn1:1.r", "esp:4", "green", [ "v0", "h48.2", "v-163.2", "h-288", "v76.8" ] ],
+    [ "btn1:2.r", "esp:GND.4", "black", [ "h9.8", "v77" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0", "h19.2", "v-57.6" ] ],
+    [ "led2:A", "esp:15", "green", [ "v0" ] ],
+    [ "btn2:1.l", "esp:5", "green", [ "h-28.8", "v-134.4", "h96", "v48" ] ],
+    [ "btn2:2.l", "esp:GND.1", "black", [ "h-19.2", "v57.8" ] ],
+    [ "esp:2", "led1:A", "green", [ "h48", "v9.6" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v28.8", "h77.2", "v86.4" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "ESP32 Dual Core Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 249.42,
+      "left": -149.03,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": 373.1,
+      "left": -288.2,
+      "attrs": { "value": "0" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 382.7,
+      "left": 9.4,
+      "attrs": { "value": "0" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "green", [ "v0" ] ],
+    [ "esp:RX", "$serialMonitor:TX", "green", [ "v0" ] ],
+    [ "pot:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.4", "black", [ "v0" ] ],
+    [ "pot:VCC", "esp:3V3.1", "red", [ "v9.6", "h28", "v-48" ] ],
+    [ "pot:SIG", "esp:4", "green", [ "v19.2", "h66.8", "v-153.6" ] ],
+    [ "pot1:VCC", "esp:3V3.1", "red", [ "v9.6", "h28", "v-220.8", "h-163.2" ] ],
+    [ "pot1:SIG", "esp:1", "green", [ "v9.6", "h-96.4", "v-153.6" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "ESP32 Dual Core Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 249.42,
+      "left": -149.03,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 543.4,
+      "left": -66.2,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": 543.4,
+      "left": -335,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "green", [ "v0" ] ],
+    [ "esp:RX", "$serialMonitor:TX", "green", [ "v0" ] ],
+    [ "servo2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "servo2:V+", "esp:5V", "red", [ "v0" ] ],
+    [ "servo1:PWM", "esp:19", "green", [ "v0" ] ],
+    [ "servo1:GND", "esp:GND.4", "black", [ "v-38.4", "h57.6", "v220.8", "h-124.8", "v-220.8" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "v-57.6", "h105.5", "v259.2", "h-307.2", "v-249.6" ] ],
+    [ "servo2:PWM", "esp:18", "green", [ "v0" ] ]
+  ],
+   "dependencies": {
+
+  }
+}

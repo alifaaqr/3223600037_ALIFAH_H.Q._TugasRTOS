@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": -9.78,
+      "left": -120.23,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -130.79,
+      "left": 134.83,
+      "attrs": { "size": "17" }
+    },
+    { "type": "wokwi-a4988", "id": "drv1", "top": 62.4, "left": 43.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "drv1:DIR", "esp:18", "green", [ "h-19.2", "v134.4", "h-163.2", "v-172.8" ] ],
+    [ "drv1:STEP", "esp:19", "green", [ "h-28.8", "v76.8" ] ],
+    [ "drv1:ENABLE", "esp:21", "green", [ "h-38.4", "v115.2" ] ],
+    [ "drv1:VDD", "esp:3V3.1", "red", [ "h28.95", "v115.28", "h0", "v48", "h-288", "v-240" ] ],
+    [ "drv1:GND.1", "esp:GND.4", "black", [ "v86.48", "h-124.65" ] ],
+    [ "drv1:VMOT", "esp:5V", "red", [ "h19.35", "v-95.92", "h-307.2", "v230.4" ] ],
+    [ "drv1:1A", "stepper1:A+", "green", [ "h0" ] ],
+    [ "drv1:1B", "stepper1:A-", "green", [ "h0" ] ],
+    [ "drv1:2A", "stepper1:B+", "green", [ "h0" ] ],
+    [ "drv1:2B", "stepper1:B-", "green", [ "h0" ] ],
+    [ "drv1:RESET", "esp:3V3.1", "green", [ "h-19.2", "v-124.8", "h-163.2", "v38.4" ] ],
+    [ "drv1:SLEEP", "esp:3V3.1", "green", [ "h-28.8", "v-134.4", "h-153.6", "v38.4" ] ]
+  ],
+  "dependencies": {}
+}
